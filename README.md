@@ -1,6 +1,6 @@
 # synkronized-charts
 
-Charts for Synkronized! Synkronized is a custom built deployment pipeline for auto applying helm charts based on simple YAML files in repo's root directories. These charts here are not intended to be used alone, but rather act as a middleman between ArgoCD and the Synkronized service. These charts leverage vault and the vault operator to pull in static secrets to the deployment, and it's inteded to deploy these charts via ArgoCD. 
+Charts for Synkronized! Synkronized is a custom built deployment pipeline for auto applying helm charts based on simple YAML files in repo's root directories. These charts here are not intended to be used alone, but rather act as a middleman between ArgoCD and the Synkronized service. These charts leverage vault and the vault operator to pull in static secrets to the deployment, and it's expected to deploy these charts via ArgoCD. 
 
 ## Single Container
 
