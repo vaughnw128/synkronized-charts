@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string",
+      "enum": ["micro", "small", "medium", "large"]
+    },
+    "image": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "tag"
+      ]
+    },
+    "vaultSecrets": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "env": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "size",
+    "image"
+  ]
+}

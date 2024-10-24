@@ -20,10 +20,11 @@ image:
   tag: "sha-b7bb738"
 
 vaultSecrets:
-  DISCORD_TOKEN: "example/discord-token"
+- DISCORD_TOKEN: "example/discord-token"
+- FAKETOKEN: "test/test"
 env:
-  MAPS_ADDRESS: "https://maps.example.com"
-  MC_SERVER_IP: "example.com"
+- MAPS_ADDRESS: "https://maps.example.com"
+- MC_SERVER_IP: "example.com"
   ```
 And apply the chart with:
 
