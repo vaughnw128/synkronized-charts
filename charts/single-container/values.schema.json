@@ -6,8 +6,7 @@
       "type": "string"
     },
     "size": {
-      "type": "string",
-      "enum": ["micro", "small", "medium", "large"]
+      "type": "string"
     },
     "image": {
       "type": "object",
@@ -28,7 +27,19 @@
       "type": "array",
       "items": [
         {
-          "type": "object"
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "path"
+          ]
         }
       ]
     },
@@ -36,7 +47,34 @@
       "type": "array",
       "items": [
         {
-          "type": "object"
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "value"
+          ]
         }
       ]
     }

@@ -19,15 +19,15 @@ spec:
         imagePullPolicy: Always
         {{- include "synkronized.pod.resources" . | nindent 8 }}
         env:
-        {{- range $k, $v := .Values.vaultSecrets }}
-        - name: {{$k}}
+        {{- range $v := .Values.vaultSecrets }}
+        - name: {{$v.name}}
           valueFrom:
             secretKeyRef:
-              name: {{lower $k | replace "_" "-"}}
+              name: {{lower $v.name | replace "_" "-"}}
               key: value
         {{- end}}
-        {{- range $k, $v := .Values.env }}
-        - name: {{$k}}
-          value: {{$v}}
+        {{- range $v := .Values.env }}
+        - name: {{$v.name}}
+          value: {{$v.value}}
         {{- end}}
         
