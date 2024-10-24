@@ -1,0 +1,11 @@
+name: "mc-status-rs"
+size: medium
+image:
+  repository: "ghcr.io/vaughnw128/mc-status-rs"
+  tag: "sha-b7bb738"
+
+vaultSecrets:
+  DISCORD_TOKEN: "mc-status-rs/discord-token"
+env:
+  MAPS_ADDRESS: "https://maps.vaughn.sh"
+  MC_SERVER_IP: "mc.vaughn.sh"

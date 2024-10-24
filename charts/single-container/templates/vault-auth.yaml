@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: vault
+  name: vault-sa-operator
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: vault-sa
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: vault-static-auth
+spec:
+  method: kubernetes
+  mount: synkronized
+  kubernetes:
+    role: synkronized
+    serviceAccount: vault-sa
+    audiences:
+      - vault
