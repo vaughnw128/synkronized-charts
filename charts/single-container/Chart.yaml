@@ -2,5 +2,5 @@ apiVersion: v2
 name: single-container
 description: Single container chart for Synkronized
 type: application
-version: 0.1.2
+version: 0.1.3
 appVersion: "1.16.0"
