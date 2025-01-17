@@ -9,19 +9,7 @@
       "type": "string"
     },
     "image": {
-      "type": "object",
-      "properties": {
-        "repository": {
-          "type": "string"
-        },
-        "tag": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "repository",
-        "tag"
-      ]
+      "type": "string"
     },
     "vaultSecrets": {
       "type": "array",
