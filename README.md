@@ -13,18 +13,19 @@ $ helm repo add synkronized-charts https://charts.vaughn.sh
 An example `values.yaml` is as follows:
 
 ```
-name: "example"
-size: medium
-image:
-  repository: "ghcr.io/vaughnw128/example"
-  tag: "sha-b7bb738"
-
-vaultSecrets:
-- DISCORD_TOKEN: "example/discord-token"
-- FAKETOKEN: "test/test"
-env:
-- MAPS_ADDRESS: "https://maps.example.com"
-- MC_SERVER_IP: "example.com"
+synkronized:
+  name: mc-status-rs
+  template: single-container
+config:
+  size: medium
+  vaultSecrets:
+    - name: "DISCORD_TOKEN"
+      path: "mc-status-rs/discord-token"
+  env:
+    - name: "MAPS_ADDRESS"
+      value: "https://maps.vaughn.sh"
+    - name: "MC_SERVER_IP"
+      value: "mc.vaughn.sh"
   ```
 And apply the chart with:
 
