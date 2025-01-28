@@ -1,0 +1,8 @@
+name: "whoami-local"
+size: micro
+image: "traefik/whoami"
+
+gateway:
+  public: false
+  hostname: "whoami.apicius.local"
+  containerPort: 80

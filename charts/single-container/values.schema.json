@@ -1,75 +1,100 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
-    },
-    "size": {
-      "type": "string"
-    },
-    "image": {
-      "type": "string"
-    },
-    "vaultSecrets": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/SingleContainer",
+    "definitions": {
+        "SingleContainer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "gateway": {
+                    "$ref": "#/definitions/Gateway"
+                },
+                "vaultSecrets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VaultSecret"
+                    }
+                },
+                "env": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Env"
+                    }
+                }
             },
-            "path": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name",
-            "path"
-          ]
-        }
-      ]
-    },
-    "env": {
-      "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "value": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name",
-            "value"
-          ]
+            "required": [
+                "image",
+                "name",
+                "size"
+            ],
+            "title": "SingleContainer"
         },
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string"
+        "Env": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                }
             },
-            "value": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name",
-            "value"
-          ]
+            "required": [
+                "name",
+                "value"
+            ],
+            "title": "Env"
+        },
+        "Gateway": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "public": {
+                    "type": "boolean"
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "hostname",
+                "port",
+                "public"
+            ],
+            "title": "Gateway"
+        },
+        "VaultSecret": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "path"
+            ],
+            "title": "VaultSecret"
         }
-      ]
     }
-  },
-  "required": [
-    "name",
-    "size",
-    "image"
-  ]
 }

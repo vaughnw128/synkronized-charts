@@ -1,0 +1,8 @@
+name: "nginx-public"
+size: micro
+image: "nginx:latest"
+
+gateway:
+  public: true
+  hostname: "public.vaughn.sh"
+  containerPort: 80

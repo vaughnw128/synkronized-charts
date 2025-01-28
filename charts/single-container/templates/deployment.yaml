@@ -17,7 +17,12 @@ spec:
       - name: {{ lower .Values.name }}
         image: "{{ .Values.image }}"
         imagePullPolicy: Always
-        {{- include "synkronized.pod.resources" . | nindent 8 }}
+        {{- include "synkronized.pod.resources" . | nindent 8 -}}
+        {{ if .Values.gateway }}
+        ports:
+        - containerPort: {{ .Values.gateway.containerPort }}
+        {{- end }}
+        {{- if .Values.env }}
         env:
         {{- range $v := .Values.vaultSecrets }}
         - name: {{$v.name}}
@@ -29,5 +34,5 @@ spec:
         {{- range $v := .Values.env }}
         - name: {{$v.name}}
           value: {{$v.value}}
+        {{- end -}}
         {{- end}}
-        

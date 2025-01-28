@@ -1,0 +1,17 @@
+name: "some-name"
+size: medium
+image: "some-image:latest"
+
+# gateway:
+#   public: true
+#   hostname: "maps.example.com"
+#   port: 80
+
+# vaultSecrets:
+# - name: "DISCORD_TOKEN"
+#   path: "mc-status-rs/discord-token"
+# env:
+# - name: "MAPS_ADDRESS"
+#   value: "https://maps.example.com"
+# - name: "MC_SERVER_IP"
+#   value: "mc.example.com"

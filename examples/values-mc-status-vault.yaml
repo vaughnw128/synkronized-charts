@@ -1,0 +1,14 @@
+# Example values using the mc status image and vault secrets
+
+name: "mc-status-rs"
+size: medium
+image: "ghcr.io/vaughnw128/mc-status-rs:sha-b7bb738"
+
+vaultSecrets:
+- name: "DISCORD_TOKEN"
+  path: "mc-status-rs/discord-token"
+env:
+- name: "MAPS_ADDRESS"
+  value: "https://maps.vaughn.sh"
+- name: "MC_SERVER_IP"
+  value: "mc.vaughn.sh"
