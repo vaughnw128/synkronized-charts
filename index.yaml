@@ -3,6 +3,16 @@ entries:
   single-container:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-01-30T03:07:12.427130475Z"
+    description: Single container chart for Synkronized
+    digest: fba3c1502064028fb10a792929598021a79cc07e94d3fe0e48534dae24215b4f
+    name: single-container
+    type: application
+    urls:
+    - https://github.com/vaughnw128/synkronized-charts/releases/download/single-container-0.1.6/single-container-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-01-28T22:07:40.327434324Z"
     description: Single container chart for Synkronized
     digest: 6619d4f5dbce9ee748487309f220b5110a8e0b888944870cb9f92f8955390373
@@ -61,4 +71,4 @@ entries:
     urls:
     - https://github.com/vaughnw128/synkronized-charts/releases/download/single-container-0.1.0/single-container-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-28T22:07:40.32754257Z"
+generated: "2025-01-30T03:07:12.427166412Z"
