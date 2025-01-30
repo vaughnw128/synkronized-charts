@@ -22,7 +22,6 @@ spec:
         ports:
         - containerPort: {{ .Values.gateway.containerPort }}
         {{- end }}
-        {{- if .Values.env or  .Values.vaultSecrets }}
         env:
         {{- range $v := .Values.vaultSecrets }}
         - name: {{$v.name}}
@@ -35,4 +34,3 @@ spec:
         - name: {{$v.name}}
           value: {{$v.value}}
         {{- end -}}
-        {{- end}}
