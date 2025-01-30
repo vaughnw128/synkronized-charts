@@ -68,13 +68,13 @@
                 "hostname": {
                     "type": "string"
                 },
-                "port": {
+                "containerPort": {
                     "type": "integer"
                 }
             },
             "required": [
                 "hostname",
-                "port",
+                "containerPort",
                 "public"
             ],
             "title": "Gateway"
